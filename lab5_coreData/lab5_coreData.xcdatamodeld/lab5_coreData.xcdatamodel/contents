@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FuckingGenre" representedClassName="FuckingGenre" syncable="YES" codeGenerationType="class">
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <relationship name="movie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FuckingMovie" inverseName="setGenre" inverseEntity="FuckingMovie"/>
+    </entity>
+    <entity name="FuckingMovie" representedClassName="FuckingMovie" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="setGenre" toMany="YES" deletionRule="Nullify" destinationEntity="FuckingGenre" inverseName="movie" inverseEntity="FuckingGenre"/>
+    </entity>
+    <entity name="MoviesData" representedClassName="MoviesData" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="releaseYear" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String" spotlightIndexingEnabled="YES"/>
+        <relationship name="genres" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoviesGenre" inverseName="movie" inverseEntity="MoviesGenre"/>
+    </entity>
+    <entity name="MoviesGenre" representedClassName="MoviesGenre" syncable="YES" codeGenerationType="class">
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <relationship name="movie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoviesData" inverseName="genres" inverseEntity="MoviesData"/>
+    </entity>
+    <elements>
+        <element name="FuckingGenre" positionX="104.96875" positionY="130.984375" width="128" height="73"/>
+        <element name="FuckingMovie" positionX="135.03125" positionY="16.9921875" width="128" height="73"/>
+        <element name="MoviesData" positionX="-95.58203125" positionY="-38.984375" width="177.58203125" height="118"/>
+        <element name="MoviesGenre" positionX="-79.55078125" positionY="110.01953125" width="146.55078125" height="73"/>
+    </elements>
+</model>
